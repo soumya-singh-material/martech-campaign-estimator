@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Salesforce Campaign Estimator</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Salesforce Campaign Estimator</h1>
+    <div class="section-title"><u>Campaign Complexity Matrix</u></div>
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>Complexity</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Small</td>
+            <td>Straightforward campaign setup using pre-defined templates and known audiences. No segmentation or personalization. Basic Tracking (sent, open, clicks, bounces, delivery)</td>
+          </tr>
+          <tr>
+            <td>Medium</td>
+            <td>Involves moderate configuration—some segmentation, personalization, existing journey updates, email modules updates (content, images, components), A/B testing, Custom reports</td>
+          </tr>
+          <tr>
+            <td>Complex</td>
+            <td>Complex setup including advanced segmentation, dynamic content requires Ampscript or SSJS, journey building, cross-channel marketing, advance personalization, Trigger send setup</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-title"><u>Campaign Count Input</u></div>
+    <div class="input-group">
+      <label for="small">Small Campaigns:<br/><span style="font-size:14px; color: #D3D3D3;"><i>(No of campaigns in month)</i></span></label>
+      <input type="number" id="small" min="0" value="0" />
+    </div>
+    <div class="input-group">
+      <label for="medium">Medium Campaigns:<br/><span style="font-size:14px; color: #D3D3D3;"><i>(No of campaigns in month)</i></span></label>
+      <input type="number" id="medium" min="0" value="0" />
+    </div>
+    <div class="input-group">
+      <label for="high">High Campaigns:<br/><span style="font-size:14px; color: #D3D3D3;"><i>(No of campaigns in month)</i></span></label>
+      <input type="number" id="high" min="0" value="0" />
+    </div>
+
+    <div class="section-title"><u>Available Resources (FTE)</u></div>
+    <div class="input-group"><label>Platform SME:</label><input type="number" id="smeFTE" min="0" step="0.1" value="1"></div>
+    <div class="input-group"><label>Campaign Ops:</label><input type="number" id="opsFTE" min="0" step="0.1" value="2"></div>
+    <div class="input-group"><label>QA Analyst:</label><input type="number" id="qaFTE" min="0" step="0.1" value="1"></div>
+    <div class="input-group"><label>Platform Architect:</label><input type="number" id="archFTE" min="0" step="0.1" value="0.5"></div>
+
+    <button onclick="generateReport()">Generate Estimate</button>
+    <div id="report"></div>
+  </div>
+  
+
+  <div id="popup" class="popup hidden">
+      <div class="popup-content">
+        <span class="close-btn" onclick="togglePopup()">&times;</span>
+        <h3>Effort Allocation by Campaign Type (In Hours)</h3>
+        <table>
+          <tr>
+            <th>Role</th><th>Small</th><th>Medium</th><th>High</th>
+          </tr>
+          <tr>
+            <td>Platform SME</td><td>1</td><td>4</td><td>8</td>
+          </tr>
+          <tr>
+            <td>Campaign Ops</td><td>4</td><td>8</td><td>16</td>
+          </tr>
+          <tr>
+            <td>QA</td><td>2</td><td>6</td><td>8</td>
+          </tr>
+          <tr>
+            <td>Architect</td><td>0</td><td>1</td><td>4</td>
+          </tr>
+        </table>
+      </div>
+ </div>
+ <script src="script.js" defer></script>
+</body>
+</html>
