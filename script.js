@@ -1,18 +1,5 @@
     const WEEKLY_FTE_HOURS = 34;
 
-    const allowedEmails = [
-          "soumya.singh@materialplus.io"
-        ];
-        
-        const userEmail = prompt("Enter your email address to access this tool:");
-        
-        if (allowedEmails.includes(userEmail.trim().toLowerCase())) {
-          document.getElementById("app").style.display = "block";
-        } else {
-          alert("You are not authorized to access this page.");
-          document.body.innerHTML = "<h2 style='color:red;text-align:center;'>Unauthorized Access</h2>";
-        }
-
     function generateReport() {
       const smallCount = parseInt(document.getElementById('small').value) || 0;
       const mediumCount = parseInt(document.getElementById('medium').value) || 0;
