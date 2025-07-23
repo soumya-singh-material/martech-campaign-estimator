@@ -1,4 +1,3 @@
-  <script>
     const WEEKLY_FTE_HOURS = 34;
 
     function generateReport() {
@@ -156,5 +155,3 @@
       const popup = document.getElementById('popup');
       popup.classList.toggle('hidden');
     }
-
-  </script>
