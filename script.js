@@ -1,8 +1,6 @@
     // Allowed email list
     const allowedEmails = [
-      "person1@example.com",
-      "person2@example.com",
-      "youremail@domain.com"
+      "soumya.singh@materialplus.io"
     ];
     
     window.onload = function () {
