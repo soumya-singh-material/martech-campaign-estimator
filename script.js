@@ -1,3 +1,30 @@
+    // Allowed email list
+    const allowedEmails = [
+      "person1@example.com",
+      "person2@example.com",
+      "youremail@domain.com"
+    ];
+    
+    window.onload = function () {
+      // Hide the main container until login success
+      document.querySelector(".container").style.display = "none";
+      document.getElementById("popup").style.display = "none";
+      document.getElementById("emailModal").style.display = "flex";
+    };
+    
+    function validateEmail() {
+      const enteredEmail = document.getElementById("emailInput").value.trim().toLowerCase();
+      const errorMsg = document.getElementById("emailError");
+    
+      if (allowedEmails.includes(enteredEmail)) {
+        // Hide modal, show content
+        document.getElementById("emailModal").style.display = "none";
+        document.querySelector(".container").style.display = "block";
+      } else {
+        errorMsg.classList.remove("hidden");
+      }
+    }
+
     const WEEKLY_FTE_HOURS = 34;
 
     function generateReport() {
