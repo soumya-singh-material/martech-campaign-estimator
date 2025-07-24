@@ -180,5 +180,11 @@
       const popup = document.getElementById('popup');
         console.log('Clicked on Popop info');
         console.log('Popup element:', popup);
-      popup.classList.toggle('hidden');
+          if (popup.classList.contains('hidden')) {
+                popup.classList.remove('hidden'); // Show popup
+              } else {
+                popup.classList.add('hidden');    // Hide popup
+              }
+       console.log('hidden removal');
+      //popup.classList.toggle('hidden');
     }
