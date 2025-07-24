@@ -178,13 +178,5 @@
     
     function togglePopup() {
       const popup = document.getElementById('popup');
-        console.log('Clicked on Popop info');
-        console.log('Popup element:', popup);
-  if (popup.style.display === 'none') {
-    popup.style.display = '';
-  } else {
-    popup.style.display = 'none';
-  }
-       console.log('hidden removal2');
-      //popup.classList.toggle('hidden');
+      popup.classList.toggle('hidden');
     }
