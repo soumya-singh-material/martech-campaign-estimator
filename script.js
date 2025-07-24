@@ -179,6 +179,6 @@
     function togglePopup() {
       const popup = document.getElementById('popup');
         console.log('Clicked on Popop info');
-        console.log('PopuValue: ' + popup);
+        console.log('Popup element:', popup);
       popup.classList.toggle('hidden');
     }
